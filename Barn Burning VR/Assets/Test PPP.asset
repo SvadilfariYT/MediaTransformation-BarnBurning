@@ -1374,9 +1374,7 @@ MonoBehaviour:
   - {fileID: 4977028560633116436}
   - {fileID: -3412235478938223031}
   - {fileID: -2022350347757762721}
-  - {fileID: 7208231940303590208}
   - {fileID: 5411662363680951321}
-  - {fileID: 8799968389042016026}
 --- !u!114 &4977028560633116436
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1468,55 +1466,5 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   opacity:
-    overrideState: 0
-    value: 1
---- !u!114 &7208231940303590208
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
-  m_Name: MotionBlur
-  m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  shutterAngle:
-    overrideState: 1
-    value: 270
-  sampleCount:
-    overrideState: 1
-    value: 10
---- !u!114 &8799968389042016026
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
-  m_Name: DepthOfField
-  m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  focusDistance:
-    overrideState: 1
-    value: 30
-  aperture:
-    overrideState: 1
-    value: 5
-  focalLength:
-    overrideState: 0
-    value: 50
-  kernelSize:
     overrideState: 0
     value: 1
