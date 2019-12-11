@@ -18,6 +18,7 @@ public class testScript : MonoBehaviour
 
     public void OnGaze()
     {
-        Debug.Log("test");
+        Debug.Log("This is a barn");
+        FindObjectOfType<AudioManager>().Play("ItemFound");
     }
 }
