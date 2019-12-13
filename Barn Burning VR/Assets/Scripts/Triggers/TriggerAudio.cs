@@ -8,11 +8,15 @@ public class TriggerAudio : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        FindObjectOfType<AudioManager>().Play(audioName);
+        if (!FindObjectOfType<AudioManager>().IsPlaying(audioName))
+        {
+            FindObjectOfType<AudioManager>().Play(audioName);
+        }
+        FindObjectOfType<AudioManager>().ActivateLoop(audioName);
     }
 
     public void OnTriggerExit(Collider other)
     {
-        FindObjectOfType<AudioManager>().Stop(audioName);
+        FindObjectOfType<AudioManager>().DeactivateLoop(audioName);
     }
 }

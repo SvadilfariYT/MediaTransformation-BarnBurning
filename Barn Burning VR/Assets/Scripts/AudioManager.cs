@@ -77,4 +77,38 @@ public class AudioManager : MonoBehaviour
 
         //Call FindObjectOfType<AudioManager>().Play("nameOfSound"); to play sound with name
     }
+
+    public void DeactivateLoop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name); //Searches for an element(Sound) named name (finds sound, where sound.name equals name)
+        if (s == null) //check for NullPointerException
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.loop = false;
+    }
+
+    public void ActivateLoop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name); //Searches for an element(Sound) named name (finds sound, where sound.name equals name)
+        if (s == null) //check for NullPointerException
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.loop = true;
+    }
+
+    public bool IsPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name); //Searches for an element(Sound) named name (finds sound, where sound.name equals name)
+        if (s == null) //check for NullPointerException
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return false;
+        }
+
+        return s.source.isPlaying;
+    }
 }
