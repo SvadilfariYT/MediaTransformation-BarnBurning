@@ -42,8 +42,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 0.9147082, b: 0.3254717, a: 1}
-  m_Intensity: 1.8
-  m_Range: 26.53
+  m_Intensity: 3.8
+  m_Range: 54.18
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
       propertyPath: m_Name
-      value: lantern1
+      value: lantern1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2187449669427467095, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
@@ -121,17 +121,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 377.67
+      value: 247.4709
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 66.22
+      value: 73.0025
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 351.39
+      value: 930.71326
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c1b36e0a6c01ce84ca5846bc08324244,
         type: 3}
