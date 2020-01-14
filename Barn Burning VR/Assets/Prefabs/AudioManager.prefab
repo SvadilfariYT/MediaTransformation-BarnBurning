@@ -142,8 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: 
-    clip: {fileID: 0}
+    clips: []
     volume: 0
     pitch: 0
+    rdmPitch: 0
     loop: 0
     source: {fileID: 0}

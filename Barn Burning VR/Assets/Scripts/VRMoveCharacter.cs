@@ -13,6 +13,8 @@ public class VRMoveCharacter : MonoBehaviour
     public bool moveForward;
     public CharacterController cc;
 
+    public string walkSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,21 @@ public class VRMoveCharacter : MonoBehaviour
             Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
 
             cc.SimpleMove(forward * speed);
+
+            //Plays Walking Sound when its not already Playing and Player is walking
+            if (!FindObjectOfType<AudioManager>().IsPlaying(walkSound))
+            {
+                FindObjectOfType<AudioManager>().Play(walkSound);
+            }
+            
+        }
+        else
+        {
+            //Stops Walking Sound when Player is not moving
+            if (FindObjectOfType<AudioManager>().IsPlaying(walkSound))
+            {
+                FindObjectOfType<AudioManager>().Stop(walkSound);
+            }
         }
     }
 }
