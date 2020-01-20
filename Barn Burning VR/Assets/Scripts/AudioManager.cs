@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         //Play("ThemeMain");
+        Play("FieldAmbiance");
     }
 
     public void Play(string name)
@@ -75,7 +76,7 @@ public class AudioManager : MonoBehaviour
 
         s.source.Stop();
 
-        //Call FindObjectOfType<AudioManager>().Play("nameOfSound"); to play sound with name
+        //Call FindObjectOfType<AudioManager>().Stop("nameOfSound"); to play sound with name
     }
 
     public void DeactivateLoop(string name)
