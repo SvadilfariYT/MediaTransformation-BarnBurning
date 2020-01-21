@@ -53,14 +53,17 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        int randomnumber = UnityEngine.Random.Range(0, s.clips.Length);
+        if (s.source.isPlaying) {
+            return;
+        }
 
-        Debug.Log(randomnumber);
+        int randomnumber = UnityEngine.Random.Range(0, s.clips.Length);
 
         //s.source.clip = s.clips[UnityEngine.Random.Range(0, s.clips.Length)];
         s.source.clip = s.clips[randomnumber];
         Debug.Log(s.source.clip);
         s.source.pitch = s.pitch + UnityEngine.Random.Range(-s.rdmPitch, s.rdmPitch);
+
         
         s.source.Play();
 
