@@ -3,6 +3,10 @@ using System;
 using UnityEngine;
 using System.Collections;
 
+//Call FindObjectOfType<AudioManager>().Play("nameOfSound"); to play sound with name
+
+//Call FindObjectOfType<AudioManager>().Stop("nameOfSound"); to stopsound with name
+
 public class AudioManager : MonoBehaviour
 {
 
@@ -61,8 +65,6 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
 
         //s.source.pitch = s.pitch;
-
-        //Call FindObjectOfType<AudioManager>().Play("nameOfSound"); to play sound with name
     }
 
     public void Stop(string name)
@@ -75,8 +77,6 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Stop();
-
-        //Call FindObjectOfType<AudioManager>().Stop("nameOfSound"); to play sound with name
     }
 
     public void DeactivateLoop(string name)
