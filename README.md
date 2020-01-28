@@ -10,7 +10,7 @@ Umgesetzt haben wir unsere Projektidee mit Unity (Version: 2019.2.9f1).
 Alle 3D-Assets sind [hier](/Barn%20Burning%20VR/Assets/Models/) zu finden.
 Alle von uns geschriebenen Skripte sind [hier](/Barn%20Burning%20VR/Assets/Scripts/) zu finden.
 
-Das Android Package ist [hier](/APK/) zu finden.
+Das Android Package ist [hier](https://drive.google.com/open?id=1WzgpUSWNcrBd0c02JOEzCDdy_VcKWSWQ) zu finden.
 
 ## Screenshots
 
