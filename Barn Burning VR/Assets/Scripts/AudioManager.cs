@@ -42,6 +42,11 @@ public class AudioManager : MonoBehaviour
     {
         //Play("ThemeMain");
         Play("FieldAmbiance");
+
+        StartCoroutine(PlayAfterTime("WasIstMitIhrPassiert", 15f));
+        StartCoroutine(PlayAfterTime("Task", 25f));
+        
+        InvokeRepeating("RandomText", 60f, 60f);
     }
 
     public void Play(string name)
@@ -70,6 +75,12 @@ public class AudioManager : MonoBehaviour
         //s.source.pitch = s.pitch;
     }
 
+    IEnumerator PlayAfterTime(string name, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Play(name);
+    }
+
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name); //Searches for an element(Sound) named name (finds sound, where sound.name equals name)
@@ -80,6 +91,11 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.Stop();
+    }
+
+    public void RandomText()
+    {
+        Play("randomText");
     }
 
     public void DeactivateLoop(string name)

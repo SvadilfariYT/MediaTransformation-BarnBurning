@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TriggerAudio : MonoBehaviour
 {
-    public string audioName;
+    [SerializeField]
+    private string audioName;
+    [SerializeField]
+    private bool loopAudio;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -12,7 +15,11 @@ public class TriggerAudio : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play(audioName);
         }
-        FindObjectOfType<AudioManager>().ActivateLoop(audioName);
+        if (loopAudio)
+        {
+            FindObjectOfType<AudioManager>().ActivateLoop(audioName);
+        }
+        
     }
 
     public void OnTriggerExit(Collider other)

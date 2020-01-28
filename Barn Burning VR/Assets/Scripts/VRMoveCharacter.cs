@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum InputType { LookDown, PS4 }
+
 public class VRMoveCharacter : MonoBehaviour
 {
+    public InputType inputType;
 
     public Transform vrCamera;
 
@@ -24,13 +27,30 @@ public class VRMoveCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f)
+        if (inputType == InputType.LookDown)
         {
-            moveForward = true;
-        } else
-        {
-            moveForward = false;
+            if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f)
+            {
+                moveForward = true;
+            }
+            else
+            {
+                moveForward = false;
+            }
         }
+
+        if(inputType == InputType.PS4)
+        {
+            if (Input.GetAxisRaw("Vertical")!= 0)
+            {
+                moveForward = true;
+            }
+            else
+            {
+                moveForward = false;
+            }
+        }
+        
 
         if (moveForward)
         {
