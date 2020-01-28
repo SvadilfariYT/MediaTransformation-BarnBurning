@@ -14,8 +14,8 @@ Das Android Package ist [hier](./APK/) zu finden.
 
 ## Screenshots
 
-![Start of the Game](./Screenshots/Start.png)
+![Start of the Game](/Screenshots/Start.PNG)
 ![Barn 1 ingame](./Screenshots/Barn1.png)
 
 ### Gruppenmitglieder
-Ana Calotescu, Pia Eikmeyer, Leon Grineisen, Dominik Sekullar
+Ana Calotescu, Pia Eikmeyer, Leon Grineisen, Dominik Sekular
