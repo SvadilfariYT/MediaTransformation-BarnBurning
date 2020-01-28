@@ -8,7 +8,7 @@ Dabei sollen diverse Objekte und Audios den Verweis zur Kurzgeschichte in der vi
 Umgesetzt haben wir unsere Projektidee mit Unity (Version: 2019.2.9f1).
 
 Alle 3D-Assets sind [hier](./Barn%20Burning%20VR/Assets/Models/) zu finden.
-Alle von uns geschriebenen Skripte sind [hier](./Barn Burning VR/Assets/Scripts/) zu finden.
+Alle von uns geschriebenen Skripte sind [hier](./Barn%20Burning%20VR/Assets/Scripts/) zu finden.
 
 Das Android Package ist [hier](./APK/) zu finden.
 
