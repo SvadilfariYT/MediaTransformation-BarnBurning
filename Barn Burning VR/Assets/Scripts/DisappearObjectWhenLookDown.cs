@@ -12,6 +12,7 @@ public class DisappearObjectWhenLookDown : MonoBehaviour
     public bool moveForward;
     public CharacterController cc;
     public GameObject objectToBeDestroyed;
+    public bool alreadyActivated;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,12 @@ public class DisappearObjectWhenLookDown : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f)
+        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f && !alreadyActivated)
         {
             //Do Something
             FindObjectOfType<Flash>().MineHit();
-            GameObject.Find("Barn5").SetActive(false);
+            objectToBeDestroyed.GetComponent<DissolveSphere>().Dissolve();
+            alreadyActivated = true;
         }
     }
 

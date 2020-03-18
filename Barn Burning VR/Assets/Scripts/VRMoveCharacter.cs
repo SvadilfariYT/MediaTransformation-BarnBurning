@@ -6,15 +6,22 @@ public enum InputType { LookDown, PS4 }
 
 public class VRMoveCharacter : MonoBehaviour
 {
-    public InputType inputType;
+    
 
     public Transform vrCamera;
+    public CharacterController cc;
 
-    [SerializeField]
-    public float toggleAngle = 30.0f;
+    [Header("Overall Settings")]
+    public InputType inputType;
     public float speed = 3.0f;
     public bool moveForward;
-    public CharacterController cc;
+    public Vector3 moveDirection = Vector3.zero;
+
+    [Header("LookDown Settings")]
+    [SerializeField]
+    public float toggleAngle = 30.0f;
+    
+    
 
     public string walkSound;
 
@@ -41,17 +48,15 @@ public class VRMoveCharacter : MonoBehaviour
 
         if(inputType == InputType.PS4)
         {
-            if (Input.GetAxisRaw("Vertical")!= 0)
-            {
-                moveForward = true;
-            }
-            else
-            {
-                moveForward = false;
-            }
+               Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            //moveDirection = Vector3.Scale(vrCamera.forward, new Vector3(Input.GetAxis("Vertical"), 0.0f, Input.GetAxis("Horizontal")));
+            moveDirection = transform.TransformDirection(input);
+            moveDirection.y = -5f;
+            cc.Move(moveDirection * Time.deltaTime * speed);
         }
         
 
+        //Just for LookDown
         if (moveForward)
         {
             Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
