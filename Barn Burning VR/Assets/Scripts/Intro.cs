@@ -23,6 +23,10 @@ public class Intro : MonoBehaviour
     IEnumerator btnAppear(float btnAppearTime)
     {
         yield return new WaitForSeconds(btnAppearTime);
-        btn.SetActive(true);
+        if(btn != null)
+        {
+            btn.SetActive(true);
+        }
+        
     }
 }

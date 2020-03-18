@@ -15,6 +15,7 @@ public class VRMoveCharacter : MonoBehaviour
     public InputType inputType;
     public float speed = 3.0f;
     public bool moveForward;
+    public Vector3 input;
     public Vector3 moveDirection = Vector3.zero;
 
     [Header("LookDown Settings")]
@@ -48,20 +49,29 @@ public class VRMoveCharacter : MonoBehaviour
 
         if(inputType == InputType.PS4)
         {
-               Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             //moveDirection = Vector3.Scale(vrCamera.forward, new Vector3(Input.GetAxis("Vertical"), 0.0f, Input.GetAxis("Horizontal")));
             moveDirection = transform.TransformDirection(input);
             moveDirection.y = -5f;
             cc.Move(moveDirection * Time.deltaTime * speed);
+
+            //Walking Sound Management
+            if (input.z > 0.2f )
+            {
+                moveForward = true;
+            } else
+            {
+                moveForward = false;
+            }
         }
         
 
-        //Just for LookDown
+        //Only for LookDown
         if (moveForward)
         {
-            Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
+            //Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
 
-            cc.SimpleMove(forward * speed);
+            //cc.SimpleMove(forward * speed);
 
             //Plays Walking Sound when its not already Playing and Player is walking
             if (!FindObjectOfType<AudioManager>().IsPlaying(walkSound))

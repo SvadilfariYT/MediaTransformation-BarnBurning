@@ -31,7 +31,7 @@ public class DisappearObjectWhenLookDown : MonoBehaviour
         if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f && !alreadyActivated)
         {
             //Do Something
-            FindObjectOfType<Flash>().MineHit();
+            FindObjectOfType<Flash>().FlashPlayer();
             objectToBeDestroyed.GetComponent<DissolveSphere>().Dissolve();
             alreadyActivated = true;
         }

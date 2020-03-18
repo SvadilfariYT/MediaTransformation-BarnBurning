@@ -12,7 +12,7 @@ public class Woman : MonoBehaviour
     {
         if (!alreadyActivated)
         {
-            FindObjectOfType<Flash>().MineHit();
+            FindObjectOfType<Flash>().FlashPlayer();
             objectToBeDestroyed.GetComponent<DissolveSphere>().Dissolve();
             alreadyActivated = true;
             StartCoroutine(Credits());
@@ -23,6 +23,8 @@ public class Woman : MonoBehaviour
     {
         Debug.Log("Waiting for a few secs");
         yield return new WaitForSeconds(10f);
+        FindObjectOfType<Flash>().BlindPlayer("black");
+        yield return new WaitForSeconds(2f);
         Debug.Log("Loading Scene: 'Credits'");
         SceneManager.LoadScene("Credits");
     }
